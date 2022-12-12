@@ -10,4 +10,12 @@ body{
 }
 body{
     background-color: #F8F8F8;
+    font-family: "-apple-system","BlinkMacSystemFont","Roboto","Helvetica Neue","MIcrosoft YaHei",sans-serif !important;
+}
+a{
+    text-decoration: none;
+    color: #999;
+}
+header{
+    font-size: 12px;
 }
