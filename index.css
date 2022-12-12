@@ -1,21 +1,39 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 html,
 body{
-    width: 100%;
-    height: 100%;
+display: block;
+
 }
 body{
     background-color: #F8F8F8;
     font-family: "-apple-system","BlinkMacSystemFont","Roboto","Helvetica Neue","MIcrosoft YaHei",sans-serif !important;
 }
-a{
-    text-decoration: none;
-    color: #999;
-}
 header{
     font-size: 12px;
+    height: 197px;
+}
+.header{
+    width: 1190px;
+    margin: 0 auto;
+}
+.header-left{
+    width: 321px;
+}
+.header-right{
+    width: 390px;
+    height: 40px;
+    line-height: 40px;
+}
+.header a:hover{
+    color: #FE8C00;
+}
+.header-right nav>ul>li{
+    width: 78px;
+    text-align: center;
+}
+.header-right ol li{
+background-color: #FFF;
 }

@@ -15,7 +15,12 @@ body {
 }
 
 a {
+  text-decoration: none;
   color: #999;
+}
+
+li {
+  list-style: none;
 }
 
 .ovh {
@@ -219,11 +224,11 @@ a {
 }
 
 .text-chengs {
-  color: rgb(255, 145, 0);
+  color: #FE8C00;
 }
 
 .bg-chengs {
-  background-color: rgb(255, 145, 0);
+  background-color: #FE8C00;
 }
 
 .text-chengs-1 {
