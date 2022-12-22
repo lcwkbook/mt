@@ -1,89 +1,1090 @@
-header{
-    height: 197px;
+.container{
+    width: 100%;
 }
+
 .header{
+    /* 辅助进行布局，布局完成以后去掉 */
+    /* background-color: red; */
+    width:1190px; 
     height: 40px;
+    /* auto:居中原理是什么 */
+    margin: 10px auto;
 }
+
+/* 调整图标大小 */
+.incon-fontzise{
+   font-size:  12px;
+   color: #999;
+}
+
+/* 顶部超链接样式 */
+a{
+    /* 去掉下划线 */
+    text-decoration: none;
+    color: #999;
+    font-size: 12px;
+}
+
 .header-left{
-    width: 321px;
-}
-.header-right{
-    width: 390px;
+/*通过float可以让元素脱离文档流 */
+    float: left;
+    /* background-color: bisque; */
+    width: 500px;
     height: 40px;
-    line-height: 40px;
 }
-.header a:hover{
+
+.header-right{
+    float: right;
+    width: 650px;
+    height: 40px;
+    /* background-color: orange; */
+}
+
+/* 左边导航栏的样式 */
+.header-left :nth-child(2){
+    color: #000;
+    margin: 0;
+    padding: 0;
+}
+
+.header-left :nth-child(3){
+    color: #000;
+}
+
+
+.header-left :nth-child(5){
+    color: #FE8C00;
+    padding: 0 15px;
+}
+
+/* 鼠标放到超链接上面为 FE8C00 */
+.header-left a:hover {
     color: #FE8C00;
 }
-.header-nav-first li{
-    width: 78px;
-    text-align: center;
+
+
+.header-right a:hover {
+    color: #FE8C00;
+}
+
+/* 导航栏右边样式 */
+/* 导航菜单标题 */
+#dropdown{
+    /* 去掉无序列表的点 */
+    list-style: none;
+    padding-left: 100px;
+}
+
+/* 菜单标题 */
+#dropdown li{
+    /* 将li横向显示 */
+    float: left;
+    width: 100px;
     height: 40px;
+    text-align: center;
 }
-.has-child{
-    position: relative;
-    border-bottom: none;
-}
-.has-child>a{
-    width: 100%;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-.has-child:hover{
+
+#dropdown li:hover{
     background-color: #fff;
-    box-shadow: 0 0 5px 0 rgb(0 0 0 / 10%);
-    border-left: 1px solid transparent;
-    border-right: 1px solid transparent;
-    border: 1px solid #E5E5E5;
-    border-bottom: none;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    
 }
-.header-nav-second{
-    z-index: 999;
-    width: 100%;
-    margin-top: 38px;
-    background-color: #fff;
-    display: none;
+
+/* 第一个下拉菜单-菜单部分 */
+#dropdown li:nth-child(1) dl{
+    width: 100px;
+    border: 1px solid #ccc;
     border-top: none;
-    box-shadow: 0 3px 5px 0 rgb(0 0 0 / 10%);
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
+    background-color: #fff;
+    padding-top: 10px;
+
+    /* 微调对齐边框 */
+    margin-left: -1px;
+    /* 指定float 元素的布局层级 */
+    position: relative;
+    z-index: 2;
 }
-.header-nav-second li{
+
+/* 第二个下拉菜单-菜单部分 */
+#dropdown li:nth-child(3) dl{
+    width: 100px;
+    border: 1px solid #ccc;
+    border-top: none;
+    background-color: #fff;
+    padding-top: 10px;
+
+    /* 微调对齐边框 */
+    margin-left: -1px;
+
+     /* 指定float 元素的布局层级 */
+     position: relative;
+     z-index: 2;
+}
+
+
+/* 第三个下拉菜单-菜单部分 */
+#dropdown li:nth-child(4) dl{
+    width: 100px;
+    border: 1px solid #ccc;
+    border-top: none;
+    background-color: #fff;
+    padding-top: 10px;
+
+    /* 微调对齐边框 */
+    margin-left: -1px;
+      /* 指定float 元素的布局层级 */
+      position: relative;
+      z-index: 2;
+}
+
+
+/* 单独建立两个css样式，方便js添加和删除 */
+/* 用来隐藏的css */
+.displayNone{ 
+    display:none;
+}
+
+/* 用来显示的css */
+.show{
+    display:block;
+}
+
+/* 第一个下拉菜单-菜单部分-下拉菜单的间距 */
+#dropdown li:nth-child(1) dl dd{
+   margin-top: 5px;
+  
+}
+
+/* 第一个下拉菜单-菜单部分-下拉菜单的间距 */
+#dropdown li:nth-child(3) dl dd{
+    margin-top: 5px;
+   
+ }
+
+ /* 第一个下拉菜单-菜单部分-下拉菜单的间距 */
+#dropdown li:nth-child(4) dl dd{
+    margin-top: 5px;
+ }
+
+
+ /* 搜索栏 */
+/* 容器div */
+ .search{
+     width: 100%;
+     height: 157px;
+     /* background-color: bisque; */
+     box-shadow: 0 2px 27px 0 rgb(0 0 0 / 10%);
+ }
+
+ /* 中部div */
+ .search-center{
+    width:1190px; 
+    height: 157px;
+    margin: 0 auto;
+ }
+ /* 中部-左 */
+ .search-center-left{
+     width: 295px;
+     height: 157px;
+     float: left;
+ }
+
+ /* 中部-左-图片 */
+ .search-center-left img{
+    width:126px;
+    height:46px;
+    padding:28px 60px 40px 0px;
+ }
+
+ /* 中部-中 */
+ .search-center-center{
+    width: 695px;
+    height: 157px;
+    float: left;
+    margin-top: 30px;
+}
+
+/* 中部-中-输入框 */
+.search-center-center input{
+    width:468px;
+    height:37px;
+    border:1px solid #E5E5E5;
+    float: left;
+}
+
+
+/* 中部-中-按钮 */
+.search-center-center button{
+    width:80px;
+    height:40px;
+    background-color: red;
+    border:1px solid #E5E5E5;
+    border-left-width:0px;
+    background:#FFC300;
+    float: left;
+}
+
+/* 中间核心内容  */
+
+.main{
     width: 100%;
+    height: 427px;
+    /* background-color:wheat; */
 }
-.has-child:nth-last-child(5) .header-nav-second{
-    width: 100%;
+
+.main-center{
+    width: 1190px;
+    height: 427px;
+    margin: 0 auto;
+    /* background-color: turquoise; */
 }
-.has-child:nth-last-child(3) .header-nav-second{
-    width: 140%;
-    border-top-left-radius: 4px;
+
+/* 侧边栏 */
+.main-center-left{
+    width: 228px;
+    height: 473px;
+    /* background-color: pink; */
+    border:1px solid #E5E5E5;
+    position: relative;
+    float: left;
+    margin-top: -70px;
+    background-color: #fff;
 }
-.has-child:nth-last-child(2) .header-nav-second{
-    width: 100%;
+
+/* 标题 */
+.main-center-left span:nth-child(1){
+    color: #000;
+    font-size: 16px;
+    font-weight: 700;
+    margin-left: 10px;
 }
-.has-child:nth-last-child(1) .header-nav-second{
-    width: 1200px;
-    box-sizing: border-box;
-    border-top-left-radius: 4px;
-    padding: 30px 36px 36px 47px;
+
+.main-center-left ul{
+    margin-top: 20px;
+    padding-left: 10px;
 }
-.header-nav-site{
+
+/* 菜单标题 */
+.main-center-left ul li{
+    list-style: none;
+    width: 218px;
+    height: 27px;
+    cursor: pointer;
+}
+
+#dropright li span{
+    font-size: 14px;
+}
+
+/* 移动 > 到右边 */
+.main-center-left ul li span:nth-child(3){
+    position: absolute;
+    right: 12px;
+    color: #222;
+}
+
+/* 鼠标放上去之后改变li的背景色 */
+.main-center-left ul li:hover{
+ background-color: #fff3cc;
+}
+
+.main-center-left ul span:hover{
+     color: #000;
+     font-weight: 600;
+}
+
+/* 菜单详情 */
+#dropright li .menuDetails{
+    width: 400px;
+    height: 400px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    /* 调整位置 */
+    position: absolute;
+    left: 228px;
+    top: 40px;
+    z-index: 5;
+}
+
+
+.icon-earth1{
+	color:#FF8200;
+}
+.icon-bird{
+	color:#FFB500;
+}
+.icon-ipod11{	
+	color:#9B5E3E;
+}
+.icon-feed{	
+	color:#FFB73F;
+}
+.icon-chat{
+	color:#FF3D17;
+}
+.icon-envelope{
+	color:#03A9F4;
+}
+.icon-phone{	
+	color:#00BF96;
+}
+.icon-headphone1{	
+	color:#00BF96;
+}
+.icon-pin1{
+	color:#FF4081;
+}
+.icon-file1{
+	color:#FF4081;
+}
+.icon-twitter-old{
+	color:#FF4081;
+}
+.icon-share{
+	color: red;
+}
+.icon-enlarge{	
+	color:#4FCBB0;
+}
+.icon-mug{	
+	color:#4FCBB0;
+}
+.icon-camera4{	
+	color:#1AA9F4;
+}
+.icon-home{	
+	color:#4FCBB0;
+}
+
+
+.main-center-center{
+    width: 710px;
+    height: 475px;
+    float: left;
+    /* background-color: #FFC300; */
+    margin: -70px 8px 0px 8px ;
 
 }
-.header-nav-third{
-    margin-right: 47px;
+
+/* 中-中-上 */
+.main-center-center-top{
+    width: 710px;
+    height: 50px;
+    /* background-color: aqua; */
+}
+.main-center-center-top a{
+    color: #000;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 0 15px;
+}
+
+.main-center-center-top a:hover{
+    color: red;
+}
+
+
+.main-center-center-bottom{
+    width: 710px;
+    height: 420px;
+    background-color: beige;
+    margin-top: 7px;
+}
+
+/* 轮播图 */
+#carousel{
+    width: 550px;
+    height: 240px;
+    background-color: chartreuse;
     float: left;
+    position: relative;
+    cursor: pointer;
 }
-.header-jiulv{
-    width: 234px;
-}
-.header-nav-site dt{
-    font-weight: 500;
-    margin-bottom: 26px;
-}
-.header-nav-site dd{
-    float: left;
-    width: 33%;
+/* 轮播图左边按钮 */
+
+#left{
+    /* 箭头的外观 */
+    width: 40px;
+    height: 40px;
+    background-color: #222;
+    border-radius: 50%;
+    color:#fff;
+    opacity: 0.8;
+    font-size: 30px;
     text-align: center;
+    /* 箭头的位置，一旦设置定位属性，就可以使用偏移量来定位 */
+    position:absolute;
+    left:15px;
+    top: 100px;
+    display: none;
 }
+
+
+/* 轮播图右边按钮 */
+#right{
+      /* 箭头的外观 */
+      width: 40px;
+      height: 40px;
+      background-color: #222;
+      border-radius: 50%;
+      color:#fff;
+      opacity: 0.8;
+      font-size: 30px;
+      text-align: center;
+      /* 箭头的位置，一旦设置定位属性，就可以使用偏移量来定位 */
+      position:absolute;
+      right:15px;
+      top: 100px;
+      display: none;
+}
+
+/* 图片下标 */
+#number{
+    width: 100px;
+    height: 5px;
+    float: left;
+    position: absolute;
+    top:220px;
+    left:240px
+}
+/* 建立列表，给列表每个li设置高度、宽度、背颜色、透明度等等来制作下标 */
+#number li{
+    list-style: none;
+    width: 10px;
+    height: 2px;
+    background-color: #ccc;
+    float: left;
+    margin-left: 5px;
+    font-size: 0px;
+    opacity: 0.8;
+}
+
+/* 休闲生活 */
+.main-center-center-bottom .leisure{
+
+    width: 150px;
+    height: 240px;
+    /* background-color:darkblue; */
+    background: url("../images/aa2.jpg");
+    /* 缩小图片，让其适应容器 */
+    background-size: cover;
+    float: left;
+    margin-left: 8px;
+}
+
+.main-center-center-bottom .hotal{
+
+    width: 270px;
+    height: 165px;
+    /* background-color: darkgoldenrod; */
+    background: url("../images/aa4.png");
+    background-size: cover;
+    float: left;
+    margin-top: 12px;
+}
+
+.main-center-center-bottom .newKnowledge{
+
+    width: 270px;
+    height: 165px;
+    /* background-color:darkturquoise; */
+    background: url("../images/aa3.jpg");
+    background-size: cover;
+    float: left;
+    margin-top: 12px;
+    margin-left: 12px;
+
+}
+.main-center-center-bottom .business{
+    width: 149px;
+    height: 165px;
+    /* background-color: lightpink; */
+    background: url("../images/aa5.jpg");
+    background-size: cover;
+    float: left;
+    margin-top: 12px;
+    margin-left: 8px;
+}
+
+.main-center-right{
+    width: 230px;
+    height: 420px;
+    float: left;
+    margin-top: -23px;
+}
+
+.main-center-right-top{
+    width:238px ;
+    height:238px ;
+    border: 1px solid #E5E5E5;
+    margin-top: 7px;
+    /* background-color: aqua; */
+}
+
+.main-center-right-top div:nth-child(1){
+    width: 55px;
+    height: 55px;
+    background:url("../images/avatar.jpg");
+    background-size: cover;
+    margin: 0 auto;
+    border-radius: 50%;
+    margin-top: 7px;
+    border:5px solid #e5e5e5
+}
+
+.main-center-right-top p:nth-child(2){
+  text-align: center;
+  color: #222;
+  font-size: 16px;
+
+}
+
+/* 登录 */
+.main-center-right-top div:nth-child(3){
+    width: 118px;
+    height: 38px;
+    border:1px solid #e5e5e5;
+    border-radius: 40px;
+    text-align: center;
+    font-size: 18px;
+    margin: 0 auto;
+    padding-top: 6px;
+    margin-top: 9px;
+    background-color: #FFC300;
+}
+
+/* 设置立即登录的字体大小 */
+.main-center-right-top div:nth-child(3) a{
+    /* margin-top: 5px; */
+    font-size: 16px;
+    text-align: center;
+    color: #222;
+ }
+
+/* 注册 */
+.main-center-right-top div:nth-child(4){
+    width: 118px;
+    height: 38px;
+    border:1px solid #e5e5e5;
+    border-radius: 40px;
+    text-align: center;
+    font-size: 18px;
+    margin: 0 auto;
+    padding-top: 6px;
+    margin-top: 9px;
+}
+
+/* 设置立即登录的字体大小 */
+.main-center-right-top div:nth-child(4) a{
+    /* margin-top: 5px; */
+    font-size: 16px;
+    text-align: center;
+    color: #222;
+ }
+
+.main-center-right-bottom{
+    width:238px ;
+    height:165px ;
+    border: 1px solid #E5E5E5;
+    margin-top: 14px;
+    /* background-color: aqua; */
+    text-align: center;
+    overflow: visible;
+}
+
+.main-center-right-bottom div:nth-child(1){
+    width: 75px;
+    height: 75px;
+    background-color: red;
+    background:url("../images/download-qr.png");
+    background-size: cover;
+    margin: 0 auto; 
+}
+
+.main-center-right-bottom p:nth-child(2){
+    font-size: 16px;
+    color: #222;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.main-center-right-bottom span:nth-child(3){
+    font-size: 12px;
+    color: red;
+    font-weight: 100;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+/* 
+*推荐民宿 
+*/
+.hotel{
+    margin-top: 30px;
+    width: 100%;
+    height: 750px;
+    /* background-color: blueviolet; */
+}
+
+.hotel-center{
+    width: 1190px;
+    height: 750px;
+    margin: 0 auto;
+    /* background-color: chocolate; */
+}
+/* 民宿标题 */
+.hotel-center-top{
+    width: 1190px;
+    height: 50px;
+    margin-top: 5px;
+    background-color: #f2c146;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #f2c146;
+}
+
+.hotel-center-top div{
+    float: left;
+    color: #fff;
+    font-size: 20px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.hotel-center-bottom{
+    width: 1190px;
+    height: 600px;
+    /* background-color: greenyellow; */
+}
+
+#hotel-tab{
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+/* 处理tab标题 */
+#hotel-tab li{
+    list-style: none;
+    font-size: 16px;
+    float: left;
+    padding-top: 5px;
+    text-align: center;
+    margin-left: 15px;
+    color: #fff;
+}
+
+/* 鼠标点击的时候增加 */
+/* #hotel-tab li:hover::after{
+    position: relative;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 7px solid #fff;
+    content: " ";
+    display: block;
+    width: 2px;
+    height: 0;
+    top: 13px;
+    margin: auto;
+} */
+
+#hotel-tab li:hover{
+    background-color:limegreen;
+    border-radius: 50%;
+}
+
+/* 民宿的内容区域 */
+.hotel-center-bottom{
+    width: 1190px;
+    height: 690px;
+    background-color: #fff;
+    border: 1px solid #999;
+}
+
+.hotel-center-bottom .tablist div{
+    width: 370px;
+    height: 320px;
+    float: left;
+    margin-left: 20px;
+    margin-top: 18px;
+}
+
+.hotel-center-bottom .tablist div img{
+    width: 370px;
+    height: 205px;
+}
+
+.hotel-center-bottom .tablist div span{
+    width: 370px;
+    height: 205px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.hotel-center-bottom .tablist div p{
+    color: #999;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.hotel-center-bottom .tablist div b{
+    color: red;
+    font-size: 22px;
+}
+
+/*  */
+.tabdisplayNone{
+ display: none;
+}
+
+
+/* 猫眼电影 */
+.miaoFilm{
+    margin: 0 auto;
+    width: 1190px;
+    height: 360px;
+    /* background-color: #00BF96; */
+    overflow: hidden;
+    position: relative;
+}
+
+.filmNav{
+    width: 1190px;
+    height: 45px;
+    background: linear-gradient(to right, rgb(250, 60, 104) 2%, rgb(254, 70, 77) 97%) rgb(250, 60, 104);
+    margin-top: 30px;
+}   
+
+/* 标题 */
+.filmNav div{
+    font-size: 18px;
+    margin-left: 13px;
+    margin-right: 10px;
+    font-family: "MFShangHei-Regular" !important;
+    color: #fff;
+    float: left;
+    margin-top: 10px;
+}
+
+.filmNav ul{
+    float: left;
+    list-style: none;
+    cursor: pointer;
+}
+
+/* 选项卡 */
+.filmNav ul li{
+    float: left;
+    font-size: 14px;
+    color: #fff;
+    line-height: 44px;
+    margin-left: 10px;
+}
+
+.filmNav ul li:hover{
+    background-color: yellowgreen;
+}
+
+.filmNav .filmNav-all{
+    float: right;
+    font-size: 16px;
+    color: #fff;
+    margin-right: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.filmList{
+    width: 3000px;
+    height: 210px;
+
+    position: relative;
+    left: 0px;
+    transition: left 1s;
+}
+
+.filmContent{
+    margin-top: 1px;
+    margin-left: 10px;
+    width: 210px;
+    height: 300px;
+    position: relative;
+    float: left;
+} 
+
+.filmContent .filmLogo{
+    width: 210px;
+    height: 300px;
+}
+
+.filmContent .filmInfo{
+    position: absolute;
+    bottom: 30px;
+    left: 5px;  
+    color: #fff
+}
+
+.filmContent .filmLook span{
+    color: #FF8200;
+}
+
+.filmContent .filmLook{
+
+}
+
+.filmContent .filmLook{
+
+}
+
+#film-left{
+        /* 箭头的外观 */
+        width: 40px;
+        height: 40px;
+        background-color: #222;
+        border-radius: 50%;
+        color:#fff;
+        opacity: 0.8;
+        font-size: 30px;
+        text-align: center;
+        /* 箭头的位置，一旦设置定位属性，就可以使用偏移量来定位 */
+        position:absolute;
+        left:15px;
+        top: 170px; 
+        z-index: 5;
+        cursor: pointer;
+        /* display: none; */
+}
+
+/* 轮播图右边按钮 */
+#film-right{
+    /* 箭头的外观 */
+    width: 40px;
+    height: 40px;
+    background-color: #222;
+    border-radius: 50%;
+    color:#fff;
+    opacity: 0.8;
+    font-size: 30px;
+    text-align: center;
+    /* 箭头的位置，一旦设置定位属性，就可以使用偏移量来定位 */
+    position:absolute;
+    right:15px;
+    top: 170px;
+    z-index: 5;
+    cursor: pointer;
+    /* display: none; */
+}
+
+ /* .filmNav ul li ::after{
+    display: block;
+	position: relative;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-bottom: 7px solid #fff;
+	content: ' ';
+    background-color:turquoise;
+	width: 2px;
+    height: 0px;
+    top: 0px;
+	margin:0 auto;
+}  */
+
+/*猜你喜欢*/
+.like{	
+	width:100%;
+	height:860px;
+	/*background:red;*/
+	margin-top:50px;
+}
+.like-center{	
+	width:1190px;
+	height:860px;
+	/*background:blue;*/
+	margin:0 auto;
+	border: 1px solid #e5e5e5;
+}
+/*猜你喜欢顶部*/
+.like-center-top{	
+	width: 1188px;
+	height:42px;
+	line-height: 42px;
+	background:#52B2D8;
+	border:1px solid #52B2D8;
+	border-radius:5px 5px 0px 0px;
+}
+.like-center-top span{	
+	font-size: 16px;
+	color:#fff;
+	margin-left: 15px;
+}
+.like-center-top span:nth-child(1){	
+	font-size: 18px;
+	font-weight: 800;
+}
+/*猜你喜欢的底部*/
+.like-center-bottom{	
+	width: 1190px;
+	height:800px;
+}
+.like-center-bottom .list{
+	width:213px;
+	height:250px;
+	margin:20px 0px 0px 20px;
+	border-radius:5px;
+	float:left;
+}
+.like-center-bottom .list img{
+	width:213px;
+	height:119px;
+}	
+.like-center-bottom .list div:nth-child(2){
+	width: 213px;
+	height:22px;
+	line-height: 22px;
+	font-size:16px;
+	font-weight: 500;
+	color:#222;
+	margin:4px 0px;
+}
+.like-center-bottom .list div:nth-child(3){
+	width:213px;
+	height:20px;
+	background:url("../images/1620562035.jpg") no-repeat;
+	margin:3px 0px;
+}
+.like-center-bottom .list div:nth-child(4){
+	width:213px;
+	height:20px;
+	color:#999;
+	font-size: 12px;
+	margin:2px 0px;
+}
+.like-center-bottom .list div:nth-child(5){
+	width:213px;
+	height:22px;
+	color:#FF6600;
+	font-size: 22px;
+	margin:5px 0px;
+}
+/*美团副导航*/
+.navbar{	
+	width:100%;
+	height:300px;
+	/*background:red;*/
+	margin-top:50px;
+}
+.navbar-center{	
+	width:1190px;
+	height:300px;
+	/*background:green;*/
+	margin:0 auto;
+	border:1px solid #e5e5e5;
+}
+/*导航开始*/
+.navbar-center-top{	
+	width:1190px;
+	height:70px;
+	line-height: 70px;
+	font-size: 18px;
+	font-weight: 500;
+	color:#222;
+	text-indent: 36px;
+}
+.navbar-center-bottom .hotcity{	
+	width:100px;
+	height:70px;
+	font-size:14px;
+	color:#222;
+	text-indent: 36px;
+	/*border:1px solid red;*/
+	float:left;
+}
+.city{
+	width:1000px;
+	height:70px;
+	font-size:14px;
+	color:#222;
+	text-indent: 36px;
+	/*border:1px solid red;*/
+	float:left;
+}	
+.navbar-center-bottom .city ul li{	
+	width:100px;
+	height:35px;
+
+	display:inline-block;
+	float: left;
+	font-size:14px;
+	color:#222;
+}
+.navbar-center-bottom .city ul li:hover{	
+	color:#FF6600;
+	cursor:pointer;
+}
+
+
+/*底部链接*/
+.footer{	
+	width:100%;
+	height:450px;
+	/*background:red;*/
+	margin-top:50px;
+}
+.footer-center{	
+	width:1190px;
+	height:450px;
+	/*background:blue;*/
+	margin:0 auto;
+	border:1px solid #e5e5e5;
+}
+/*底部链接详细信息*/
+.footer-center-content{
+	width:150px;
+	height:170px;
+	/*border:1px solid red;*/
+	margin:50px 0px 0px 70px;
+	float:left;
+}
+.footer-center-content ul b{	
+	font-size:14px;
+	color:#222;
+	line-height:22px;
+}
+.footer-center-content ul li{	
+	font-size:12px;
+	color:#222;
+	line-height:20px;
+}
+.footer-center-content  ul li:hover{	
+	color:#FF6600;
+	cursor:pointer;
+}
+/*关于网站的介绍*/
+.info{	
+	width:100%;
+	height:100px;
+	margin-top:50px;
+}
+.info-center{	
+	width:1190px;
+	height:100px;
+	margin:0 auto;
+	line-height: 100px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+

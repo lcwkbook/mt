@@ -1,0 +1,23 @@
+/* 处理整个网站公共的css样式 */
+
+/* 将所有的元素的内外边距去掉 */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* 设置网页的背景颜色 */
+body{
+    background-color: #F8F8F8;
+}
+/*
+-给包裹float子元素的父元素增加此样式，可以解决高度塌陷的问题
+-可以解决父子元素外边框重合的问题
+*/
+.clearfix ::after,
+.clearfix ::before{
+     content: "";
+     /* table为块元素 */
+     display: table; 
+     clear: both;
+ }
